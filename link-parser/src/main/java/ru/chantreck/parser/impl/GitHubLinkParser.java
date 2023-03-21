@@ -7,6 +7,12 @@ import ru.chantreck.parser.response.GitHubResponse;
 import ru.chantreck.parser.response.LinkParserResponse;
 
 public class GitHubLinkParser extends LinkParser {
+    private final static String GITHUB_URL = "github\\.com";
+    private final static String USER_TEMPLATE = "[\\w_-]+";
+    private final static String REPOSITORY_TEMPLATE = "[\\w_-]+";
+    private final static String TEMPLATE = String.format(".*%s/(%s)/(%s).*", GITHUB_URL, USER_TEMPLATE, REPOSITORY_TEMPLATE);
+    private final static Pattern pattern = Pattern.compile(TEMPLATE);
+
     public GitHubLinkParser(LinkParser nextParser) {
         super(nextParser);
     }
@@ -30,10 +36,4 @@ public class GitHubLinkParser extends LinkParser {
     private boolean isAcceptable(Link link) {
         return Pattern.matches(TEMPLATE, link.link());
     }
-
-    private final static String GITHUB_URL = "github\\.com";
-    private final static String USER_TEMPLATE = "[\\w_-]+";
-    private final static String REPOSITORY_TEMPLATE = "[\\w_-]+";
-    private final static String TEMPLATE = String.format(".*%s/(%s)/(%s).*", GITHUB_URL, USER_TEMPLATE, REPOSITORY_TEMPLATE);
-    private final static Pattern pattern = Pattern.compile(TEMPLATE);
 }

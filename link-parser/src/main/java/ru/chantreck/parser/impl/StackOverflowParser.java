@@ -7,6 +7,11 @@ import ru.chantreck.parser.response.LinkParserResponse;
 import ru.chantreck.parser.response.StackOverflowResponse;
 
 public class StackOverflowParser extends LinkParser {
+    private final static String STACK_OVERFLOW_URL = "stackoverflow.com";
+    private final static String ID_TEMPLATE = "\\d+";
+    private final static String TEMPLATE = String.format(".*%s/questions/(%s).*", STACK_OVERFLOW_URL, ID_TEMPLATE);
+    private final static Pattern pattern = Pattern.compile(TEMPLATE);
+
     public StackOverflowParser(LinkParser nextParser) {
         super(nextParser);
     }
@@ -29,9 +34,4 @@ public class StackOverflowParser extends LinkParser {
     private boolean isAcceptable(Link link) {
         return Pattern.matches(TEMPLATE, link.link());
     }
-
-    private final static String STACK_OVERFLOW_URL = "stackoverflow.com";
-    private final static String ID_TEMPLATE = "\\d+";
-    private final static String TEMPLATE = String.format(".*%s/questions/(%s).*", STACK_OVERFLOW_URL, ID_TEMPLATE);
-    private final static Pattern pattern = Pattern.compile(TEMPLATE);
 }
