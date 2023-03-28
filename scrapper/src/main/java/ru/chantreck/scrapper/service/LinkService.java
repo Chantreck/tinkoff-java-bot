@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import ru.chantreck.scrapper.exception.error.ConflictError;
-import ru.chantreck.scrapper.exception.error.not_found.LinkNotFoundError;
+import ru.chantreck.scrapper.exception.error.notfound.LinkNotFoundError;
 import ru.chantreck.scrapper.service.model.Link;
 
 @Service

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.chantreck.scrapper.exception.error.BadRequestError;
-import ru.chantreck.scrapper.exception.error.not_found.ChatNotFound;
+import ru.chantreck.scrapper.exception.error.notfound.ChatNotFound;
 
 @Tag(name = "Chats")
 @RestController
