@@ -1,2 +1,6 @@
 app:
   test: busy_body
+
+springdoc:
+  swagger-ui:
+    path: swagger-ui

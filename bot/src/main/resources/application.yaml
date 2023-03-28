@@ -1,2 +1,7 @@
 app:
   test: bite_at_the_cherry
+
+
+springdoc:
+  swagger-ui:
+    path: swagger-ui

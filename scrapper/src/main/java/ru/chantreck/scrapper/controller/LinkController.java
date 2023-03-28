@@ -1,5 +1,6 @@
 package ru.chantreck.scrapper.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import ru.chantreck.scrapper.dto.response.LinkResponse;
 import ru.chantreck.scrapper.dto.response.ListLinksResponse;
 import ru.chantreck.scrapper.service.LinkService;
 
+@Tag(name = "Links")
 @RestController
 @RequestMapping("/links")
 @RequiredArgsConstructor
