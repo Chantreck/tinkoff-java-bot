@@ -7,16 +7,15 @@ import ru.chantreck.scrapper.webclient.stackoverflow.dto.StackOverflowQuestionRe
 
 @RequiredArgsConstructor
 public class StackOverflowClientImpl implements StackOverflowClient {
-    private static final String BASE_URL = "https://api.stackexchange.com/2.3";
+    private static final String DEFAULT_BASE_URL = "https://api.stackexchange.com/2.3";
     private final WebClient client;
 
-    public static StackOverflowClientImpl create() {
-        return create(BASE_URL);
+    public StackOverflowClientImpl() {
+        this(DEFAULT_BASE_URL);
     }
 
-    public static StackOverflowClientImpl create(String baseUrl) {
-        var webClient = WebClient.create(baseUrl);
-        return new StackOverflowClientImpl(webClient);
+    public StackOverflowClientImpl(String baseUrl) {
+        client = WebClient.create(baseUrl);
     }
 
     @Override

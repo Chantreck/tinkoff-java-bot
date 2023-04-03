@@ -11,11 +11,11 @@ import ru.chantreck.scrapper.webclient.stackoverflow.StackOverflowClientImpl;
 public class ClientConfiguration {
     @Bean
     GitHubClient gitHubClient() {
-        return GitHubClientImpl.create();
+        return new GitHubClientImpl();
     }
 
     @Bean
     StackOverflowClient stackOverflowClient() {
-        return StackOverflowClientImpl.create();
+        return new StackOverflowClientImpl();
     }
 }
