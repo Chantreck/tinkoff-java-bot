@@ -18,6 +18,7 @@
         <spring-cloud.version>2022.0.0</spring-cloud.version>
         <spring-boot.version>3.0.1</spring-boot.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,6 +55,13 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                 <version>2.0.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.9.2</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -94,6 +102,17 @@
                         <release>17</release>
                         <parameters>true</parameters>
                     </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
                 </plugin>
             </plugins>
         </pluginManagement>
