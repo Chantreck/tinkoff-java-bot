@@ -1,6 +1,12 @@
 app:
   test: bite_at_the_cherry
+  telegram:
+    token: ${TELEGRAM_BOT_TOKEN}
+  external-url:
+    scrapper-url: ${URL_SCRAPPER}
 
+server:
+  port: 8800
 
 springdoc:
   swagger-ui:
