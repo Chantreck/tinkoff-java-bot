@@ -1,2 +1,8 @@
 app:
   test: busy_body
+  scheduler:
+    interval: 15000
+
+springdoc:
+  swagger-ui:
+    path: swagger-ui
